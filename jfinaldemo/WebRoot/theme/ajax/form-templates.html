@@ -1,0 +1,1112 @@
+
+<div class="row">
+	<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+		<h1 class="page-title txt-color-blueDark">
+
+			<!-- PAGE HEADER -->
+			<i class="fa-fw fa fa-pencil-square-o"></i> 表单 <span>> 表单布局 </span>
+		</h1>
+	</div>
+
+	<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+
+		<!-- Button trigger modal -->
+		<a href="theme/ajax/modal-content/model-content-2.html" data-toggle="modal" data-target="#remoteModal" class="btn btn-success btn-lg pull-right header-btn hidden-mobile"> <i class="fa fa-circle-arrow-up fa-lg"></i> 运行表单模式 </a>
+
+		<!-- MODAL PLACE HOLDER -->
+		<div class="modal fade" id="remoteModal" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content"></div>
+			</div>
+		</div>
+		<!-- END MODAL -->
+
+	</div>
+</div>
+
+<div class="alert alert-block alert-success">
+	<a class="close" data-dismiss="alert" href="#">×</a>
+	<h4 class="alert-heading">
+		<i class="fa fa-check-square-o"></i> 检查验证！
+	</h4>
+	<p>你也可以通过点击表单动作按钮检查表单验证。请试验并查看下面的结果！</p>
+</div>
+
+<!-- widget grid -->
+<section id="widget-grid" class="">
+
+
+	<!-- START ROW -->
+
+	<div class="row">
+
+		<!-- NEW COL START -->
+		<article class="col-sm-12 col-md-12 col-lg-6">
+
+			<!-- Widget ID (each widget will need unique ID)-->
+			<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
+				<!-- widget options:
+					usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+					
+					data-widget-colorbutton="false"	
+					data-widget-editbutton="false"
+					data-widget-togglebutton="false"
+					data-widget-deletebutton="false"
+					data-widget-fullscreenbutton="false"
+					data-widget-custombutton="false"
+					data-widget-collapsed="true" 
+					data-widget-sortable="false"
+					
+				-->
+				<header>
+					<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+					<h2>校验表单</h2>
+
+				</header>
+
+				<!-- widget div-->
+				<div>
+
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<!-- end widget edit box -->
+
+					<!-- widget content -->
+					<div class="widget-body no-padding">
+
+						<form action="" id="checkout-form" class="smart-form" novalidate="novalidate">
+
+							<fieldset>
+								<div class="row">
+									<section class="col col-6">
+										<label class="input"> <i class="icon-prepend fa fa-user"></i> <input type="text" name="fname" placeholder="姓"> </label>
+									</section>
+									<section class="col col-6">
+										<label class="input"> <i class="icon-prepend fa fa-user"></i> <input type="text" name="lname" placeholder="名"> </label>
+									</section>
+								</div>
+
+								<div class="row">
+									<section class="col col-6">
+										<label class="input"> <i class="icon-prepend fa fa-envelope-o"></i> <input type="email" name="email" placeholder="邮箱"> </label>
+									</section>
+									<section class="col col-6">
+										<label class="input"> <i class="icon-prepend fa fa-phone"></i> <input type="tel" name="phone" placeholder="电话号码" data-mask="(999) 999-9999"> </label>
+									</section>
+								</div>
+							</fieldset>
+
+							<fieldset>
+								<div class="row">
+									<section class="col col-5">
+										<label class="select"> <select name="country">
+												<option selected="" disabled="">请选择省份</option>
+												<option value="浙江">浙江</option>
+												<option value="河南">河南</option>
+												<option value="山东">山东</option>
+												<option value="山西">山西</option>
+												<option value="福建">福建</option>
+												<option value="北京">北京</option>
+												<option value="上海">上海</option>
+												<option value="广东">广东</option>
+												<option value="广西">广西</option>
+										</select> <i></i> </label>
+									</section>
+
+									<section class="col col-4">
+										<label class="input"> <input type="text" name="city" placeholder="城市"> </label>
+									</section>
+
+									<section class="col col-3">
+										<label class="input"> <input type="text" name="code" placeholder="邮编"> </label>
+									</section>
+								</div>
+
+								<section>
+									<label for="address" class="input"> <input type="text" name="address" placeholder="地址"> </label>
+								</section>
+
+								<section>
+									<label class="textarea"> <textarea rows="3" name="info" placeholder="附加信息"></textarea> </label>
+								</section>
+							</fieldset>
+
+							<fieldset>
+								<section>
+									<div class="inline-group">
+										<label class="radio"> <input type="radio" name="radio-inline" checked=""> <i></i>Visa</label> <label class="radio"> <input type="radio" name="radio-inline"> <i></i>万事达卡</label> <label class="radio"> <input type="radio" name="radio-inline"> <i></i>美国运通</label>
+									</div>
+								</section>
+
+								<section>
+									<label class="input"> <input type="text" name="name" placeholder="持卡人姓名"> </label>
+								</section>
+
+								<div class="row">
+									<section class="col col-10">
+										<label class="input"> <input type="text" name="card" placeholder="卡号" data-mask="9999-9999-9999-9999"> </label>
+									</section>
+									<section class="col col-2">
+										<label class="input"> <input type="text" name="cvv" placeholder="CVV2" data-mask="999"> </label>
+									</section>
+								</div>
+
+								<div class="row">
+									<label class="label col col-4">到期日期</label>
+									<section class="col col-5">
+										<label class="select"> <select name="month">
+												<option value="0" selected="" disabled="">请选择月份</option>
+												<option value="1">一月</option>
+												<option value="1">二月</option>
+												<option value="3">三月</option>
+												<option value="4">四月</option>
+												<option value="5">五月</option>
+												<option value="6">六月</option>
+												<option value="7">七月</option>
+												<option value="8">八月</option>
+												<option value="9">九月</option>
+												<option value="10">十月</option>
+												<option value="11">十一月</option>
+												<option value="12">十二月</option>
+										</select> <i></i> </label>
+									</section>
+									<section class="col col-3">
+										<label class="input"> <input type="text" name="year" placeholder="年份" data-mask="2099"> </label>
+									</section>
+								</div>
+							</fieldset>
+
+							<footer>
+								<button type="submit" class="btn btn-primary">验证表单</button>
+							</footer>
+						</form>
+
+					</div>
+					<!-- end widget content -->
+
+				</div>
+				<!-- end widget div -->
+
+			</div>
+			<!-- end widget -->
+
+			<!-- Widget ID (each widget will need unique ID)-->
+			<div class="jarviswidget" id="wid-id-3" data-widget-editbutton="false" data-widget-custombutton="false">
+				<!-- widget options:
+					usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+					
+					data-widget-colorbutton="false"	
+					data-widget-editbutton="false"
+					data-widget-togglebutton="false"
+					data-widget-deletebutton="false"
+					data-widget-fullscreenbutton="false"
+					data-widget-custombutton="false"
+					data-widget-collapsed="true" 
+					data-widget-sortable="false"
+					
+				-->
+				<header>
+					<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+					<h2>注册表单</h2>
+
+				</header>
+
+				<!-- widget div-->
+				<div>
+
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<!-- end widget edit box -->
+
+					<!-- widget content -->
+					<div class="widget-body no-padding">
+
+						<form action="" id="order-form" class="smart-form" novalidate="novalidate">
+							<header> 订单服务 </header>
+
+							<fieldset>
+								<div class="row">
+									<section class="col col-6">
+										<label class="input"> <i class="icon-append fa fa-user"></i> <input type="text" name="name" placeholder="姓名"> </label>
+									</section>
+									<section class="col col-6">
+										<label class="input"> <i class="icon-append fa fa-briefcase"></i> <input type="text" name="company" placeholder="公司"> </label>
+									</section>
+								</div>
+
+								<div class="row">
+									<section class="col col-6">
+										<label class="input"> <i class="icon-append fa fa-envelope-o"></i> <input type="email" name="email" placeholder="邮箱"> </label>
+									</section>
+									<section class="col col-6">
+										<label class="input"> <i class="icon-append fa fa-phone"></i> <input type="tel" name="phone" placeholder="电话" data-mask="(999) 999-9999"> </label>
+									</section>
+								</div>
+							</fieldset>
+
+							<fieldset>
+								<div class="row">
+									<section class="col col-6">
+										<label class="select"> <select name="interested">
+												<option value="0" selected="" disabled="">爱好</option>
+												<option value="1">设计</option>
+												<option value="1">开发</option>
+												<option value="2">游戏</option>
+												<option value="2">建筑</option>
+												<option value="3">影视</option>
+										</select> <i></i> </label>
+									</section>
+									<section class="col col-6">
+										<label class="select"> <select name="budget">
+												<option value="0" selected="" disabled="">预算</option>
+												<option value="1">少于 5000￥</option>
+												<option value="2">5000￥ - 10000￥</option>
+												<option value="3">10000￥ - 20000￥</option>
+												<option value="4">大于 20000￥</option>
+										</select> <i></i> </label>
+									</section>
+								</div>
+
+								<div class="row">
+									<section class="col col-6">
+										<label class="input"> <i class="icon-append fa fa-calendar"></i> <input type="text" name="startdate" id="startdate" placeholder="预期开始时间"> </label>
+									</section>
+									<section class="col col-6">
+										<label class="input"> <i class="icon-append fa fa-calendar"></i> <input type="text" name="finishdate" id="finishdate" placeholder="预期结束时间"> </label>
+									</section>
+								</div>
+
+								<section>
+									<label for="file" class="input input-file">
+										<div class="button">
+											<input type="file" name="file" onchange="this.parentNode.nextSibling.value = this.value">浏览
+										</div>
+										<input type="text" placeholder="选择文件" readonly=""> </label>
+								</section>
+
+								<section>
+									<label class="textarea"> <i class="icon-append fa fa-comment"></i> <textarea rows="5" name="comment" placeholder="告诉我们您的项目"></textarea> </label>
+								</section>
+							</fieldset>
+							<footer>
+								<button type="submit" class="btn btn-primary">验证表单</button>
+							</footer>
+						</form>
+
+					</div>
+					<!-- end widget content -->
+
+				</div>
+				<!-- end widget div -->
+
+			</div>
+			<!-- end widget -->
+
+			<!-- Widget ID (each widget will need unique ID)-->
+			<div class="jarviswidget" id="wid-id-7" data-widget-editbutton="false" data-widget-custombutton="false">
+				<!-- widget options:
+					usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+					
+					data-widget-colorbutton="false"	
+					data-widget-editbutton="false"
+					data-widget-togglebutton="false"
+					data-widget-deletebutton="false"
+					data-widget-fullscreenbutton="false"
+					data-widget-custombutton="false"
+					data-widget-collapsed="true" 
+					data-widget-sortable="false"
+					
+				-->
+				<header>
+					<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+					<h2>评审表单</h2>
+
+				</header>
+
+				<!-- widget div-->
+				<div>
+
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<!-- end widget edit box -->
+
+					<!-- widget content -->
+					<div class="widget-body no-padding">
+
+						<form action="" id="review-form" class="smart-form">
+							<header> 评审表单 </header>
+
+							<fieldset>
+								<section>
+									<label class="input"> <i class="icon-append fa fa-user"></i> <input type="text" name="name" id="name" placeholder="您的姓名"> </label>
+								</section>
+
+								<section>
+									<label class="input"> <i class="icon-append fa fa-envelope-o"></i> <input type="email" name="email" id="email" placeholder="您的邮箱"> </label>
+								</section>
+
+								<section>
+									<label class="label"></label> <label class="textarea"> <i class="icon-append fa fa-comment"></i> <textarea rows="3" name="review" id="review" placeholder="评审意见"></textarea> </label>
+								</section>
+
+								<section>
+									<div class="rating">
+										<input type="radio" name="quality" id="quality-5"> <label for="quality-5"><i class="fa fa-star"></i>
+										</label> <input type="radio" name="quality" id="quality-4"> <label for="quality-4"><i class="fa fa-star"></i>
+										</label> <input type="radio" name="quality" id="quality-3"> <label for="quality-3"><i class="fa fa-star"></i>
+										</label> <input type="radio" name="quality" id="quality-2"> <label for="quality-2"><i class="fa fa-star"></i>
+										</label> <input type="radio" name="quality" id="quality-1"> <label for="quality-1"><i class="fa fa-star"></i>
+										</label> 产品质量
+									</div>
+
+									<div class="rating">
+										<input type="radio" name="reliability" id="reliability-5"> <label for="reliability-5"><i class="fa fa-star"></i>
+										</label> <input type="radio" name="reliability" id="reliability-4"> <label for="reliability-4"><i class="fa fa-star"></i>
+										</label> <input type="radio" name="reliability" id="reliability-3"> <label for="reliability-3"><i class="fa fa-star"></i>
+										</label> <input type="radio" name="reliability" id="reliability-2"> <label for="reliability-2"><i class="fa fa-star"></i>
+										</label> <input type="radio" name="reliability" id="reliability-1"> <label for="reliability-1"><i class="fa fa-star"></i>
+										</label> 产品可靠性
+									</div>
+
+									<div class="rating">
+										<input type="radio" name="overall" id="overall-5"> <label for="overall-5"><i class="fa fa-star"></i>
+										</label> <input type="radio" name="overall" id="overall-4"> <label for="overall-4"><i class="fa fa-star"></i>
+										</label> <input type="radio" name="overall" id="overall-3"> <label for="overall-3"><i class="fa fa-star"></i>
+										</label> <input type="radio" name="overall" id="overall-2"> <label for="overall-2"><i class="fa fa-star"></i>
+										</label> <input type="radio" name="overall" id="overall-1"> <label for="overall-1"><i class="fa fa-star"></i>
+										</label> 综合评介
+									</div>
+								</section>
+							</fieldset>
+							<footer>
+								<button type="submit" class="btn btn-primary">验证表单</button>
+							</footer>
+						</form>
+
+					</div>
+					<!-- end widget content -->
+
+				</div>
+				<!-- end widget div -->
+
+			</div>
+			<!-- end widget -->
+
+		</article>
+		<!-- END COL -->
+
+		<!-- NEW COL START -->
+		<article class="col-sm-12 col-md-12 col-lg-6">
+
+			<!-- Widget ID (each widget will need unique ID)-->
+			<div class="jarviswidget" id="wid-id-4" data-widget-editbutton="false" data-widget-custombutton="false">
+				<!-- widget options:
+					usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+					
+					data-widget-colorbutton="false"	
+					data-widget-editbutton="false"
+					data-widget-togglebutton="false"
+					data-widget-deletebutton="false"
+					data-widget-fullscreenbutton="false"
+					data-widget-custombutton="false"
+					data-widget-collapsed="true" 
+					data-widget-sortable="false"
+					
+				-->
+				<header>
+					<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+					<h2>注册表单</h2>
+
+				</header>
+
+				<!-- widget div-->
+				<div>
+
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<!-- end widget edit box -->
+
+					<!-- widget content -->
+					<div class="widget-body no-padding">
+
+						<form action="" id="smart-form-register" class="smart-form">
+							<header> 注册表单 </header>
+
+							<fieldset>
+								<section>
+									<label class="input"> <i class="icon-append fa fa-user"></i> <input type="text" name="username" placeholder="用户姓名"> <b class="tooltip tooltip-bottom-right">网站用户名</b> </label>
+								</section>
+
+
+
+								<section>
+									<label class="input"> <i class="icon-append fa fa-envelope-o"></i> <input type="email" name="email" placeholder="邮箱地址"> <b class="tooltip tooltip-bottom-right">验证账户</b> </label>
+								</section>
+
+								<section>
+									<label class="input"> <i class="icon-append fa fa-lock"></i> <input type="password" name="password" placeholder="请输入密码" id="password"> <b class="tooltip tooltip-bottom-right">不要忘记密码</b> </label>
+								</section>
+
+								<section>
+									<label class="input"> <i class="icon-append fa fa-lock"></i> <input type="password" name="passwordConfirm" placeholder="请再次输入密码"> <b class="tooltip tooltip-bottom-right">不要忘记密码</b> </label>
+								</section>
+							</fieldset>
+
+							<fieldset>
+								<div class="row">
+									<section class="col col-6">
+										<label class="input"> <input type="text" name="firstname" placeholder="姓"> </label>
+									</section>
+									<section class="col col-6">
+										<label class="input"> <input type="text" name="lastname" placeholder="名"> </label>
+									</section>
+								</div>
+
+								<div class="row">
+									<section class="col col-6">
+										<label class="select"> <select name="gender">
+												<option value="0" selected="" disabled="">性别</option>
+												<option value="1">男</option>
+												<option value="2">女</option>
+												<option value="3">保密</option>
+										</select> <i></i> </label>
+									</section>
+									<section class="col col-6">
+										<label class="input"> <i class="icon-append fa fa-calendar"></i> <input type="text" name="request" placeholder="校验日期" class="datepicker" data-dateformat='yy-mm-dd'> </label>
+									</section>
+								</div>
+
+								<section>
+									<label class="checkbox"> <input type="checkbox" name="subscription" id="subscription"> <i></i>我想接收消息和制定服务</label> <label class="checkbox"> <input type="checkbox" name="terms" id="terms"> <i></i>我同意这些条款和条件</label>
+								</section>
+							</fieldset>
+							<footer>
+								<button type="submit" class="btn btn-primary">验证表单</button>
+							</footer>
+						</form>
+
+					</div>
+					<!-- end widget content -->
+
+				</div>
+				<!-- end widget div -->
+
+			</div>
+			<!-- end widget -->
+
+			<!-- Widget ID (each widget will need unique ID)-->
+			<div class="jarviswidget" id="wid-id-6" data-widget-editbutton="false" data-widget-custombutton="false">
+				<!-- widget options:
+					usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+					
+					data-widget-colorbutton="false"	
+					data-widget-editbutton="false"
+					data-widget-togglebutton="false"
+					data-widget-deletebutton="false"
+					data-widget-fullscreenbutton="false"
+					data-widget-custombutton="false"
+					data-widget-collapsed="true" 
+					data-widget-sortable="false"
+					
+				-->
+				<header>
+					<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+					<h2>评论表单</h2>
+
+				</header>
+
+				<!-- widget div-->
+				<div>
+
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<!-- end widget edit box -->
+
+					<!-- widget content -->
+					<div class="widget-body no-padding">
+
+						<form action="ajax/comment" method="post" id="comment-form" class="smart-form">
+							<header> 评论表单 </header>
+
+							<fieldset>
+								<div class="row">
+									<section class="col col-4">
+										<label class="label">姓名</label> <label class="input"> <i class="icon-append fa fa-user"></i> <input type="text" name="name"> </label>
+									</section>
+									<section class="col col-4">
+										<label class="label">邮箱</label> <label class="input"> <i class="icon-append fa fa-envelope-o"></i> <input type="email" name="email"> </label>
+									</section>
+									<section class="col col-4">
+										<label class="label">站点</label> <label class="input"> <i class="icon-append fa fa-globe"></i> <input type="url" name="url"> </label>
+									</section>
+								</div>
+
+								<section>
+									<label class="label">评论</label> <label class="textarea"> <i class="icon-append fa fa-comment"></i> <textarea rows="4" name="comment"></textarea> </label>
+									<div class="note">你可以使用这些HTML标签和属性: &lt;a href="" title=""&gt;, &lt;abbr title=""&gt;, &lt;acronym title=""&gt;, &lt;b&gt;, &lt;blockquote cite=""&gt;, &lt;cite&gt;, &lt;code&gt;, &lt;del datetime=""&gt;, &lt;em&gt;, &lt;i&gt;, &lt;q cite=""&gt;, &lt;strike&gt;, &lt;strong&gt;.</div>
+								</section>
+							</fieldset>
+
+							<footer>
+								<button type="submit" name="submit" class="btn btn-primary">验证表单</button>
+							</footer>
+
+							<div class="message">
+								<i class="fa fa-check fa-lg"></i>
+								<p>您的评论已经成功提交!</p>
+							</div>
+						</form>
+
+					</div>
+					<!-- end widget content -->
+
+				</div>
+				<!-- end widget div -->
+
+			</div>
+			<!-- end widget -->
+
+
+			<!-- Widget ID (each widget will need unique ID)-->
+			<div class="jarviswidget" id="wid-id-8" data-widget-editbutton="false" data-widget-custombutton="false">
+				<!-- widget options:
+					usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+					
+					data-widget-colorbutton="false"	
+					data-widget-editbutton="false"
+					data-widget-togglebutton="false"
+					data-widget-deletebutton="false"
+					data-widget-fullscreenbutton="false"
+					data-widget-custombutton="false"
+					data-widget-collapsed="true" 
+					data-widget-sortable="false"
+					
+				-->
+				<header>
+					<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+					<h2>联系表单</h2>
+
+				</header>
+
+				<!-- widget div-->
+				<div>
+
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<!-- end widget edit box -->
+
+					<!-- widget content -->
+					<div class="widget-body no-padding">
+
+						<form action="ajax/comment" method="post" id="contact-form" class="smart-form">
+							<header>联系表单</header>
+
+							<fieldset>
+								<div class="row">
+									<section class="col col-6">
+										<label class="label">姓名</label> <label class="input"> <i class="icon-append fa fa-user"></i> <input type="text" name="name" id="name"> </label>
+									</section>
+									<section class="col col-6">
+										<label class="label">邮箱</label> <label class="input"> <i class="icon-append fa fa-envelope-o"></i> <input type="email" name="email" id="email"> </label>
+									</section>
+								</div>
+
+								<section>
+									<label class="label">主题</label> <label class="input"> <i class="icon-append fa fa-tag"></i> <input type="text" name="subject" id="subject"> </label>
+								</section>
+
+								<section>
+									<label class="label">消息</label> <label class="textarea"> <i class="icon-append fa fa-comment"></i> <textarea rows="4" name="message" id="message"></textarea> </label>
+								</section>
+
+								<section>
+									<label class="checkbox"><input type="checkbox" name="copy" id="copy"><i></i>抄送一份到我的邮箱</label>
+								</section>
+							</fieldset>
+
+							<footer>
+								<button type="submit" class="btn btn-primary">验证表单</button>
+							</footer>
+
+							<div class="message">
+								<i class="fa fa-thumbs-up"></i>
+								<p>您的邮件已经成功发送!</p>
+							</div>
+						</form>
+
+					</div>
+					<!-- end widget content -->
+
+				</div>
+				<!-- end widget div -->
+
+			</div>
+			<!-- end widget -->
+
+
+		</article>
+		<!-- END COL -->
+
+	</div>
+
+	<!-- END ROW -->
+
+</section>
+<!-- end widget grid -->
+
+
+<!-- SCRIPTS ON PAGE EVENT -->
+<script type="text/javascript">
+	/* DO NOT REMOVE : GLOBAL FUNCTIONS!
+	 *
+	 * pageSetUp(); WILL CALL THE FOLLOWING FUNCTIONS
+	 *
+	 * // activate tooltips
+	 * $("[rel=tooltip]").tooltip();
+	 *
+	 * // activate popovers
+	 * $("[rel=popover]").popover();
+	 *
+	 * // activate popovers with hover states
+	 * $("[rel=popover-hover]").popover({ trigger: "hover" });
+	 *
+	 * // activate inline charts
+	 * runAllCharts();
+	 *
+	 * // setup widgets
+	 * setup_widgets_desktop();
+	 *
+	 * // run form elements
+	 * runAllForms();
+	 *
+	 ********************************
+	 *
+	 * pageSetUp() is needed whenever you load a page.
+	 * It initializes and checks for all basic elements of the page
+	 * and makes rendering easier.
+	 *
+	 */
+
+	pageSetUp();
+
+	// PAGE RELATED SCRIPTS
+
+	// pagefunction
+
+	var pagefunction = function() {
+
+		var $checkoutForm = $('#checkout-form').validate({
+			// Rules for form validation
+			rules : {
+				fname : {
+					required : true
+				},
+				lname : {
+					required : true
+				},
+				email : {
+					required : true,
+					email : true
+				},
+				phone : {
+					required : true
+				},
+				country : {
+					required : true
+				},
+				city : {
+					required : true
+				},
+				code : {
+					required : true,
+					digits : true
+				},
+				address : {
+					required : true
+				},
+				name : {
+					required : true
+				},
+				card : {
+					required : true,
+					creditcard : true
+				},
+				cvv : {
+					required : true,
+					digits : true
+				},
+				month : {
+					required : true
+				},
+				year : {
+					required : true,
+					digits : true
+				}
+			},
+
+			// Messages for form validation
+			messages : {
+				fname : {
+					required : '请输入您的姓'
+				},
+				lname : {
+					required : '请输入您的名'
+				},
+				email : {
+					required : '请输入您的邮箱地址',
+					email : '请输入一个合法的邮箱地址'
+				},
+				phone : {
+					required : '请输入您的电话号码'
+				},
+				country : {
+					required : '请输入您的省份'
+				},
+				city : {
+					required : '请输入您的城市'
+				},
+				code : {
+					required : '请输入您的邮编',
+					digits : '只能输入数字'
+				},
+				address : {
+					required : '请输入您的详细地址'
+				},
+				name : {
+					required : '请输入您的卡片持有者姓名'
+				},
+				card : {
+					required : '请输入您的卡号'
+				},
+				cvv : {
+					required : '请输入 CVV2',
+					digits : '只能输入数字'
+				},
+				month : {
+					required : '请选择月份'
+				},
+				year : {
+					required : '请输入年份',
+					digits : '只能输入数字'
+				}
+			},
+
+			// Do not change code below
+			errorPlacement : function(error, element) {
+				error.insertAfter(element.parent());
+			}
+		});
+
+		var $registerForm = $("#smart-form-register").validate({
+
+			// Rules for form validation
+			rules : {
+				username : {
+					required : true
+				},
+				email : {
+					required : true,
+					email : true
+				},
+				password : {
+					required : true,
+					minlength : 3,
+					maxlength : 20
+				},
+				passwordConfirm : {
+					required : true,
+					minlength : 3,
+					maxlength : 20,
+					equalTo : '#password'
+				},
+				firstname : {
+					required : true
+				},
+				lastname : {
+					required : true
+				},
+				gender : {
+					required : true
+				},
+				terms : {
+					required : true
+				}
+			},
+
+			// Messages for form validation
+			messages : {
+				login : {
+					required : '请输入您的登录用户名'
+				},
+				email : {
+					required : '请输入您的邮箱',
+					email : '请输入有用的邮箱地址'
+				},
+				password : {
+					required : '请输入您的密码'
+				},
+				passwordConfirm : {
+					required : '请再次输入您的密码',
+					equalTo : '请输入和上面一样的密码'
+				},
+				firstname : {
+					required : '请输入您的姓'
+				},
+				lastname : {
+					required : '请输入您的名'
+				},
+				gender : {
+					required : '请选择您的性别'
+				},
+				terms : {
+					required : '您必须同意此协议条款'
+				}
+			},
+
+			// Do not change code below
+			errorPlacement : function(error, element) {
+				error.insertAfter(element.parent());
+			}
+		});
+
+		var $reviewForm = $("#review-form").validate({
+			// Rules for form validation
+			rules : {
+				name : {
+					required : true
+				},
+				email : {
+					required : true,
+					email : true
+				},
+				review : {
+					required : true,
+					minlength : 20
+				},
+				quality : {
+					required : true
+				},
+				reliability : {
+					required : true
+				},
+				overall : {
+					required : true
+				}
+			},
+
+			// Messages for form validation
+			messages : {
+				name : {
+					required : '请输入您的姓名'
+				},
+				email : {
+					required : '请输入您的邮箱地址',
+					email : '<i class="fa fa-warning"></i><strong>请输入一个合法的邮箱地址</strong>'
+				},
+				review : {
+					required : '请输入评审意见'
+				},
+				quality : {
+					required : '请对我们的产品质量进行评价'
+				},
+				reliability : {
+					required : '请对我们的产品可靠性进行评价'
+				},
+				overall : {
+					required : '请对我们的产品进行综合评价'
+				}
+			},
+
+			// Do not change code below
+			errorPlacement : function(error, element) {
+				error.insertAfter(element.parent());
+			}
+		});
+
+		var $commentForm = $("#comment-form").validate({
+			// Rules for form validation
+			rules : {
+				name : {
+					required : true
+				},
+				email : {
+					required : true,
+					email : true
+				},
+				url : {
+					url : true
+				},
+				comment : {
+					required : true
+				}
+			},
+
+			// Messages for form validation
+			messages : {
+				name : {
+					required : '输入您的姓名',
+				},
+				email : {
+					required : '输入您的邮箱地址',
+					email : '请输入一个合理的邮箱地址'
+				},
+				url : {
+					email : '请输入一个合理的网址'
+				},
+				comment : {
+					required : '请输入您的评论'
+				}
+			},
+
+			// Ajax form submition
+			submitHandler : function(form) {
+				$(form).ajaxSubmit({
+					success : function() {
+						$("#comment-form").addClass('submited');
+					}
+				});
+			},
+
+			// Do not change code below
+			errorPlacement : function(error, element) {
+				error.insertAfter(element.parent());
+			}
+		});
+
+		var $contactForm = $("#contact-form").validate({
+			// Rules for form validation
+			rules : {
+				name : {
+					required : true
+				},
+				email : {
+					required : true,
+					email : true
+				},
+				message : {
+					required : true,
+					minlength : 10
+				}
+			},
+
+			// Messages for form validation
+			messages : {
+				name : {
+					required : '请输入您的名字',
+				},
+				email : {
+					required : '请输入您的邮箱地址',
+					email : '请输入一个合理的邮箱地址'
+				},
+				message : {
+					required : '请输入您需要发送的信息'
+				}
+			},
+
+			// Ajax form submition
+			submitHandler : function(form) {
+				$(form).ajaxSubmit({
+					success : function() {
+						$("#contact-form").addClass('submited');
+					}
+				});
+			},
+
+			// Do not change code below
+			errorPlacement : function(error, element) {
+				error.insertAfter(element.parent());
+			}
+		});
+
+		var $orderForm = $("#order-form").validate({
+			// Rules for form validation
+			rules : {
+				name : {
+					required : true
+				},
+				email : {
+					required : true,
+					email : true
+				},
+				phone : {
+					required : true
+				},
+				interested : {
+					required : true
+				},
+				budget : {
+					required : true
+				}
+			},
+
+			// Messages for form validation
+			messages : {
+				name : {
+					required : '请输入您的姓名'
+				},
+				email : {
+					required : '请输入您的邮箱地址',
+					email : '请输入一个合法的邮箱地址'
+				},
+				phone : {
+					required : '请输入您的电话号码'
+				},
+				interested : {
+					required : '请选择您感兴趣的服务'
+				},
+				budget : {
+					required : '请选择您的预选'
+				}
+			},
+			
+
+			// Do not change code below
+			errorPlacement : function(error, element) {
+				error.insertAfter(element.parent());
+			}
+		});
+
+		// START AND FINISH DATE
+		$('#startdate').datepicker({
+			dateFormat : 'dd.mm.yy',
+			prevText : '<i class="fa fa-chevron-left"></i>',
+			nextText : '<i class="fa fa-chevron-right"></i>',
+			onSelect : function(selectedDate) {
+				$('#finishdate').datepicker('option', 'minDate', selectedDate);
+			}
+		});
+
+		$('#finishdate').datepicker({
+			dateFormat : 'dd.mm.yy',
+			prevText : '<i class="fa fa-chevron-left"></i>',
+			nextText : '<i class="fa fa-chevron-right"></i>',
+			onSelect : function(selectedDate) {
+				$('#startdate').datepicker('option', 'maxDate', selectedDate);
+			}
+		});
+
+	};
+
+	// end pagefunction
+
+	// Load form valisation dependency 
+	loadScript("theme/js/plugin/jquery-form/jquery-form.min.js", pagefunction);
+</script>

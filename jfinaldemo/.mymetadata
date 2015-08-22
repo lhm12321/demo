@@ -2,9 +2,9 @@
 <project-module
   type="WEB"
   name="jfinaldemo"
-  id="myeclipse.1439123180268"
+  id="myeclipse.1440217914780"
   context-root="/jfinaldemo"
-  j2ee-spec="5.0"
+  j2ee-spec="6.0"
   archive="jfinaldemo.war">
   <attributes>
     <attribute name="webrootdir" value="WebRoot" />

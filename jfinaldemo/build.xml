@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="deploy" basedir="." default="deployWar">
+
+
+	<property name="projectName" value="jfianldemo" />
+	<property name="bin.dir" value="./" />
+	<property name="dist.dir" value="./target" />
+	<!--
+		params: dist.dir, bin.dir, projectName
+	-->
+	<target name="warfile" description="Build the web application archive">
+
+		<delete dir="${dist.dir}/deploy" />
+		<copy todir="${dist.dir}/deploy">
+			<fileset dir="${bin.dir}/WebRoot">
+			</fileset>
+		</copy>
+		<delete>
+			<fileset dir="${dist.dir}/deploy/WEB-INF/lib">
+				<exclude name="commons**" />
+				<exclude name="cos.jar" />
+				<exclude name="druid**" />
+				<exclude name="freemaker**" />
+				<exclude name="gson**" />
+				<exclude name="guava**" />
+				<exclude name="jfinal**" />
+				<exclude name="joor**" />
+				<exclude name="ojdbc**" />
+				<exclude name="mysql**" />
+				<exclude name="poi**" />
+				<exclude name="log4j**" />
+				<exclude name="slf4j**" />
+				<exclude name="quartz**" />
+			</fileset>
+		</delete>
+		<war warfile="${dist.dir}/${projectName}.war">
+			<fileset dir="${dist.dir}/deploy" />
+
+		</war>
+		<delete dir="${dist.dir}/deploy" />
+	</target>
+	<target name="deployWar">
+		<antcall target="warfile">
+			<param name="dist.dir" value="${dist.dir}" />
+			<param name="bin.dir" value="${bin.dir}" />
+			<param name="projectName" value="${projectName}" />
+		</antcall>
+	</target>
+</project>

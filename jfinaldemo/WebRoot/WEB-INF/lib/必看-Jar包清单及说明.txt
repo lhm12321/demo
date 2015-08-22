@@ -1,0 +1,15 @@
+1.commons-fileupload-1.3.1.jar             文件上传功能包,编辑器用到(非必须)
+1:cos.jar                                  支持文件上传功能(必须)
+2:druid-1.0.9.jar                          数据库连接池(必须)
+3:freemarker-2.3.23.jar                    freemarker核心包(必须)
+4:gson-2.3.1.jar                           json解析类-Google出品(必须,大数据效率不行，请改用fastjson)
+5:guava-18.0.jar                           java基础功能扩展类-Google出品（必须）
+6:jfinal-2.0-bin-with-src.jar              Jfinal后台框架(必须)
+7:joor-0.9.3                               反射的封装,链式调用（必须）
+8:log4j-1.2.17.jar                         日志输出 (quartz包依赖)
+9:mysql-connector-java-5.1.31-bin.jar      mysql数据库驱动包(根据实际情况选择)
+10:ojdbc6.jar                              oracle数据库驱动包(根据实际情况选择)
+11:poi-3.10.1.jar                          EXCEL xls 文件导出方法类(必须)
+12:quartz-2.2.1.jar                        任务调度插件(必须)
+13:slf4j-api-1.7.10.jar                    日志输出 (quartz包依赖)
+14:slf4j-log4j12-1.7.10.jar                日志输出 (quartz包依赖)
