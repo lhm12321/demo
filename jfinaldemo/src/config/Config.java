@@ -80,8 +80,6 @@ public class Config extends JFinalConfig {
 		if (!devMode) {
 			me.add(new QuartzPlugin("job.properties"));
 		}
-		// QuartzPlugin quartzPlugin = new QuartzPlugin("job.properties");
-		// me.add(quartzPlugin);
 
 	}
 
