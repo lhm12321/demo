@@ -216,11 +216,10 @@ public class sprkController extends Controller{
 		});
 		DwzRender dwz = DwzRender.closeCurrentAndRefresh("ckkc");
 		if(flag==true){
-			dwz.setMessage("入库成功");
+			dwz.message("入库成功");
 			render(dwz);
 		}else{
-			dwz.setStatusCode("300");
-			dwz.setMessage("入库失败");
+			dwz.statusCode("300").message("入库失败");
 			render(dwz);
 		}
 	}

@@ -171,11 +171,10 @@ public class ckkcController extends Controller{
 		});
 		DwzRender dwz = DwzRender.closeCurrentAndRefresh("ckkc");
 		if(flag==true){
-			dwz.setMessage("操作成功");
+			dwz.message("操作成功");
 			render(dwz);
 		}else{
-			dwz.setStatusCode("300");
-			dwz.setMessage("操作失败");
+			dwz.message("操作失败").statusCode("300");
 			render(dwz);
 		}
 	}

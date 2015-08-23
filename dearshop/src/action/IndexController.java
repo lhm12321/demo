@@ -10,7 +10,7 @@ import common.LocalConstant;
 /**
  * CommonController
  */
-public class MainController extends Controller {
+public class IndexController extends Controller {
 	public void index() {
 		String url = "/login/login.jsp";
 		User loginUser = (User) getSessionAttr(LocalConstant.SESSION_USER);
@@ -42,8 +42,7 @@ public class MainController extends Controller {
 		String requestType = getRequest().getHeader("X-Requested-With");
 		if (requestType != null && requestType.equals("XMLHttpRequest")) {// 框架链接返回JSON串
 			DwzRender timeout = new DwzRender();
-			timeout.setMessage("会话超时");
-			timeout.setStatusCode("301");
+			timeout.message("会话超时").statusCode("301");
 			render(timeout);
 		} else {
 			render("/login/login.jsp");

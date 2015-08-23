@@ -148,7 +148,7 @@ public class spcsController extends Controller{
 		});
 		DwzRender dwz = DwzRender.closeCurrentAndRefresh("ckkc");
 		if(flag==true){
-			dwz.setMessage("入库成功");
+			dwz.message("入库成功");
 			render(dwz);
 		}else{
 			render(DwzRender.error("入库失败，请核对数量！"));

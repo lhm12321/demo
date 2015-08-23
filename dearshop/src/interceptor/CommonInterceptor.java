@@ -1,7 +1,7 @@
 package interceptor;
 
 import com.jfinal.aop.Interceptor;
-import com.jfinal.core.ActionInvocation;
+import com.jfinal.aop.Invocation;
 import com.jfinal.core.Controller;
 import com.jfinal.ext.render.DwzRender;
 
@@ -15,14 +15,14 @@ public class CommonInterceptor implements Interceptor {
 	private static String MethodName;
 	private static boolean flag = true;
 
-	public void init(ActionInvocation ai) {
+	public void init(Invocation ai) {
 		c = ai.getController();
 		controllerKey = ai.getControllerKey();
 		actionKey = ai.getActionKey();
 		MethodName = ai.getMethodName();
 	}
 
-	public void intercept(ActionInvocation ai) {
+	public void intercept(Invocation ai) {
 		init(ai);
 		setControllerKey();// 设置访问controllerKey
 		// flag = true; //hhj_test
