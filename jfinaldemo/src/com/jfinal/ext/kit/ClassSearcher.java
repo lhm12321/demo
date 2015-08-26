@@ -15,13 +15,13 @@
  */
 package com.jfinal.ext.kit;
 
-import com.google.common.collect.Lists;
 import com.jfinal.kit.PathKit;
 import com.jfinal.log.Logger;
 
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.jar.JarEntry;
@@ -36,17 +36,17 @@ public class ClassSearcher {
 
     private String libDir = PathKit.getWebRootPath() + File.separator + "WEB-INF" + File.separator + "lib";
 
-    private List<String> scanPackages = Lists.newArrayList();
+    private List<String> scanPackages = new ArrayList<String>();
 
     private boolean includeAllJarsInLib = false;
 
-    private List<String> includeJars = Lists.newArrayList();
+    private List<String> includeJars = new ArrayList<String>();
 
     private Class target;
 
     @SuppressWarnings("unchecked")
     private static <T> List<Class<? extends T>> extraction(Class<T> clazz, List<String> classFileList) {
-        List<Class<? extends T>> classList = Lists.newArrayList();
+        List<Class<? extends T>> classList = new ArrayList<Class<? extends T>>();
         for (String classFile : classFileList) {
             Class<?> classInFile ;
             try {
@@ -79,7 +79,7 @@ public class ClassSearcher {
         /**
          * 算法简述： 从某个给定的需查找的文件夹出发，搜索该文件夹的所有子文件夹及文件， 若为文件，则进行匹配，匹配成功则加入结果集，若为子文件夹，则进队列。 队列不空，重复上述操作，队列为空，程序结束，返回结果。
          */
-        List<String> classFiles = Lists.newArrayList();
+        List<String> classFiles = new ArrayList<String>();
         String tempName = null;
         // 判断目录是否存在
         File baseDir = new File(baseDirName);
@@ -154,7 +154,7 @@ public class ClassSearcher {
     }
 
     public <T> List<Class<? extends T>> search() {
-        List<String> classFileList = Lists.newArrayList();
+        List<String> classFileList = new ArrayList<String>();
         if(scanPackages.isEmpty()){
             classFileList = findFiles(classpath, "*.class");
         }else {
@@ -176,7 +176,7 @@ public class ClassSearcher {
      * @see <a href="http://my.oschina.net/u/556800" target="_blank" rel="nofollow">@return</a>
      */
     private List<String> findjarFiles(String baseDirName, final List<String> includeJars) {
-        List<String> classFiles = Lists.newArrayList();
+        List<String> classFiles = new ArrayList<String>();
         try {
             // 判断目录是否存在
             File baseDir = new File(baseDirName);

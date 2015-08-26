@@ -22,7 +22,6 @@ mysql> desc blog;
 数据库字段名建议使用驼峰命名规则，便于与 java 代码保持一致，如字段名： userId
  */
 
-//@TableBind(tableName = "User")   model注册注解
 @SuppressWarnings("serial")
 public class Tblog extends Model<Tblog>{
 	public static final Tblog dao = new Tblog();

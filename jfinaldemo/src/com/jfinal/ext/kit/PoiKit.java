@@ -15,8 +15,6 @@
  */
 package com.jfinal.ext.kit;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.Lists;
 import com.jfinal.plugin.activerecord.Model;
 import com.jfinal.plugin.activerecord.Record;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -50,22 +48,33 @@ public class PoiKit {
 	public static List<List<?>> dice(List<?> num, int chunkSize) {
 		int size = num.size();
 		int chunk_num = size / chunkSize + (size % chunkSize == 0 ? 0 : 1);
-		List<List<?>> result = Lists.newArrayList();
+		List<List<?>> result = new ArrayList<List<?>>();
 		for (int i = 0; i < chunk_num; i++) {
-			result.add(Lists.newArrayList(num.subList(i * chunkSize, i == chunk_num - 1 ? size : (i + 1) * chunkSize)));
+			result.add(num.subList(i * chunkSize, i == chunk_num - 1 ? size : (i + 1) * chunkSize));
 		}
 		return result;
 	}
 
 	public Workbook export() {
-		Preconditions.checkNotNull(headers, "headers can not be null");
-		Preconditions.checkNotNull(columns, "columns can not be null");
-		Preconditions.checkArgument(cellWidth >= 0, "cellWidth < 0");
+		if(headers==null){
+			System.out.println("headers can not be null");
+			return null;
+		}
+		if(columns==null){
+			System.out.println("columns can not be null");
+			return null;
+		}
+		if(cellWidth<0){
+			System.out.println("cellWidth < 0");
+			return null;
+		}
 		Workbook wb;
 		wb = new HSSFWorkbook();
 		if (data.length > 1) {
 			for (List<?> item : data) {
-				Preconditions.checkArgument(item.size() < MAX_ROWS, "Invalid data size (" + item.size() + ") outside allowable range (0..65535)");
+				if(item.size() >= MAX_ROWS){
+					System.out.println("Invalid data size (" + item.size() + ") outside allowable range (0..65535)");
+				}
 			}
 		} else if (data[0].size() > MAX_ROWS) {
 			data = dice(data[0], MAX_ROWS).toArray(new List<?>[] {});

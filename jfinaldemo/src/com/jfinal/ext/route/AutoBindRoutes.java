@@ -15,10 +15,9 @@
  */
 package com.jfinal.ext.route;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.Lists;
 import com.jfinal.config.Routes;
 import com.jfinal.core.Controller;
 import com.jfinal.ext.kit.ClassSearcher;
@@ -29,11 +28,11 @@ public class AutoBindRoutes extends Routes {
 
     private boolean autoScan = true;
 
-    private List<Class<? extends Controller>> excludeClasses = Lists.newArrayList();
+    private List<Class<? extends Controller>> excludeClasses = new ArrayList<Class<? extends Controller>>();
 
     private boolean includeAllJarsInLib;
 
-    private List<String> includeJars = Lists.newArrayList();
+    private List<String> includeJars = new ArrayList<String>();
 
     protected final Logger logger = Logger.getLogger(getClass());
 
@@ -96,8 +95,10 @@ public class AutoBindRoutes extends Routes {
     }
 
     private String controllerKey(Class<Controller> clazz) {
-        Preconditions.checkArgument(clazz.getSimpleName().endsWith(suffix),
-                clazz.getName()+" is not annotated with @ControllerBind and not end with " + suffix);
+    	if(!clazz.getSimpleName().endsWith(suffix)){
+    		System.out.println(clazz.getName()+" is not annotated with @ControllerBind and not end with " + suffix);
+    		return null;
+    	}
         String controllerKey = "/" + StrKit.firstCharToLowerCase(clazz.getSimpleName());
         controllerKey = controllerKey.substring(0, controllerKey.indexOf(suffix));
         return controllerKey;

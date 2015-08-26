@@ -15,7 +15,6 @@
  */
 package com.jfinal.ext.quartz;
 
-import com.google.common.collect.Maps;
 import com.jfinal.ext.kit.Reflect;
 import com.jfinal.log.Logger;
 import com.jfinal.plugin.IPlugin;
@@ -29,7 +28,7 @@ import java.util.*;
 public class QuartzPlugin implements IPlugin {
     private static final String JOB = "job";
     private final Logger logger = Logger.getLogger(getClass());
-    private Map<Job,String> jobs = Maps.newLinkedHashMap();
+    private Map<Job,String> jobs = new HashMap<Job, String>();
     private SchedulerFactory sf;
     private Scheduler scheduler;
     private String jobConfig = "job.properties";

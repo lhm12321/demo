@@ -5,7 +5,6 @@ import java.util.Map;
 
 import com.jfinal.plugin.activerecord.Model;
 
-//@TableBind(tableName = "TUser")   model注册注解
 @SuppressWarnings("serial")
 public class Tuser extends Model<Tuser> {
 	public static final Tuser dao = new Tuser();
