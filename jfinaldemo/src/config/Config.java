@@ -7,6 +7,9 @@ import java.util.Properties;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import model.Tblog;
+import model.Tuser;
+
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
 import com.jfinal.config.Interceptors;
@@ -17,8 +20,8 @@ import com.jfinal.ext.handler.ContextPathHandler;
 import com.jfinal.ext.interceptor.SessionInViewInterceptor;
 import com.jfinal.ext.quartz.QuartzPlugin;
 import com.jfinal.ext.route.AutoBindRoutes;
-import com.jfinal.ext.tablebind.AutoTableBindPlugin;
 import com.jfinal.ext.xml.LoadConfigXml;
+import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.activerecord.CaseInsensitiveContainerFactory;
 import com.jfinal.plugin.activerecord.dialect.MysqlDialect;
 import com.jfinal.plugin.druid.DruidPlugin;
@@ -49,34 +52,29 @@ public class Config extends JFinalConfig {
 
 	// 数据库配置，model注册
 	public void configPlugin(Plugins me) {
-		AutoTableBindPlugin atbp = null;
+		ActiveRecordPlugin arp = null;
 		if (devMode) {
 			Properties local = loadPropertyFile("druid.properties");
 			DruidPlugin druidPlugin = new DruidPlugin(local.getProperty("url"), local.getProperty("username"), local.getProperty("password"), local.getProperty("driverClass"));
 			me.add(druidPlugin);
-			atbp = new AutoTableBindPlugin(druidPlugin);
+			arp = new ActiveRecordPlugin(druidPlugin);
 			System.out.println("druid---OK");
 		} else {
 			try {
 				Properties jndi = loadPropertyFile("jndi.properties");
 				DataSource datasource = (DataSource) new InitialContext().lookup(jndi.getProperty("datasource"));
-				atbp = new AutoTableBindPlugin(datasource);
+				arp = new ActiveRecordPlugin(datasource);
 				System.out.println("jndi---OK");
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
 		}
-
-		// 自动绑定表【有了它就不再需要 ActiveRecordPlugin了】
-		// AutoTableBindPlugin atbp = new AutoTableBindPlugin(druidPlugin).addScanPackages("model"); //多数据源情况下，注册不同包名下的model
-		// atbp.addJars("modelInJar.jar");//载入jar包中的model
-		// atbp.autoScan(false); //取消全部自动注入，只注入有注解的model
-
-		me.add(atbp);
-
-		atbp.setContainerFactory(new CaseInsensitiveContainerFactory());// 忽略数据库字段大小写
-		//atbp.setDialect(new OracleDialect());// 设置数据库方言为Oracle
-		atbp.setDialect(new MysqlDialect());//设置数据库方言为Mysql
+		
+		arp.addMapping("tblog", Tblog.class);
+		arp.addMapping("tuser", Tuser.class);
+		me.add(arp);
+		arp.setContainerFactory(new CaseInsensitiveContainerFactory());// 忽略数据库字段大小写
+		arp.setDialect(new MysqlDialect());//设置数据库方言为Mysql
 		if (!devMode) {
 			me.add(new QuartzPlugin("job.properties"));
 		}

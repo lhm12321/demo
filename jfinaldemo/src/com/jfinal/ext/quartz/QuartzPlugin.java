@@ -15,7 +15,6 @@
  */
 package com.jfinal.ext.quartz;
 
-import com.google.common.base.Throwables;
 import com.google.common.collect.Maps;
 import com.jfinal.ext.kit.Reflect;
 import com.jfinal.log.Logger;
@@ -69,7 +68,7 @@ public class QuartzPlugin implements IPlugin {
         	}
             scheduler = sf.getScheduler();
         } catch (SchedulerException e) {
-            Throwables.propagate(e);
+            e.printStackTrace();
         }
         Set<Map.Entry<Job,String>> set = jobs.entrySet();
         for (Map.Entry<Job,String> entry : set) {
@@ -94,7 +93,7 @@ public class QuartzPlugin implements IPlugin {
         try {
             scheduler.start();
         } catch (SchedulerException e) {
-            Throwables.propagate(e);
+        	e.printStackTrace();
         }
     }
 
@@ -112,7 +111,7 @@ public class QuartzPlugin implements IPlugin {
             try {
                 jobs.put(job.newInstance(),jobCronExp);
             } catch (Exception e) {
-                Throwables.propagate(e);
+            	e.printStackTrace();
             }
         }
     }
@@ -139,7 +138,7 @@ public class QuartzPlugin implements IPlugin {
         try {
             jobProp.load(is);
         } catch (IOException e) {
-            Throwables.propagate(e);
+        	e.printStackTrace();
         }
         logger.debug("------------load Job Propteries---------------");
         logger.debug(jobProp.toString());
@@ -151,7 +150,7 @@ public class QuartzPlugin implements IPlugin {
         try {
             scheduler.shutdown();
         } catch (SchedulerException e) {
-            Throwables.propagate(e);
+        	e.printStackTrace();
         }
         return true;
     }

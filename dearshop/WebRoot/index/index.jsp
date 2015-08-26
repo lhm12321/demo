@@ -13,7 +13,7 @@
 <link href="dwz/themes/css/print.css" rel="stylesheet" type="text/css" media="print"/>
 <link href="dwz/themes/css/ieHack.css" rel="stylesheet" type="text/css" media="screen"/>
 
-<script src="dwz/js/jquery-1.7.2.js" type="text/javascript"></script>
+<script src="js/jquery-1.7.2.js" type="text/javascript"></script>
 <script src="dwz/js/jquery.cookie.js" type="text/javascript"></script>
 <script src="dwz/js/jquery.validate.js" type="text/javascript"></script>
 <script src="dwz/js/jquery.bgiframe.js" type="text/javascript"></script>
