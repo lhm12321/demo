@@ -20,11 +20,11 @@ import com.jfinal.ext.handler.ContextPathHandler;
 import com.jfinal.ext.interceptor.SessionInViewInterceptor;
 import com.jfinal.ext.quartz.QuartzPlugin;
 import com.jfinal.ext.route.AutoBindRoutes;
-import com.jfinal.ext.xml.LoadConfigXml;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.activerecord.CaseInsensitiveContainerFactory;
 import com.jfinal.plugin.activerecord.dialect.MysqlDialect;
 import com.jfinal.plugin.druid.DruidPlugin;
+import common.LoadConfigXml;
 
 import action.IndexController;
 import handler.SessionHandler;

@@ -1,4 +1,4 @@
-package com.jfinal.ext.xml;
+package common;
 
 import java.io.File;
 
